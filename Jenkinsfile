@@ -33,14 +33,14 @@ pipeline {
                 sh 'terraform apply -auto-approve'
             }
         }
-        stage('Terraform Destroy') {
+/*        stage('Terraform Destroy') {
             steps {
                 sh 'terraform destroy -auto-approve'
             }
-        }
+        }*/
     }
 }
----
+/*---
 pipeline {
     agent any
     environment {
@@ -84,7 +84,7 @@ pipeline {
             }
         }
     }
-}
+}*/
 /*
 def fmtStatus = sh "terraform fmt -list=true -write=false -diff=true -check=true"
 if (fmtStatus == 0) {
