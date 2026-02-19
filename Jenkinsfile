@@ -8,8 +8,8 @@ pipeline {
         stage('Terraform Initialization') {
             steps {
                 bat 'terraform init'
-                bat 'pwd'
-                bat 'ls -al'
+                bat 'cd'
+                bat 'dir'
                 bat 'printenv'
             }
         }
