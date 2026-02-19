@@ -26,6 +26,7 @@ pipeline {
         stage('Terraform Planning') {
             steps {
               bat 'terraform plan -no-color'
+              input message: "Approve build or Discard?"
             }
         }
         stage('Terraform Apply') {
@@ -33,11 +34,11 @@ pipeline {
                 bat 'terraform apply -auto-approve'
             }
         }
-/*        stage('Terraform Destroy') {
+        stage('Terraform Destroy') {
             steps {
                 sh 'terraform destroy -auto-approve'
             }
-        }*/
+        }
     }
 }
 /*---
