@@ -10,7 +10,7 @@ pipeline {
                 bat 'terraform init'
                 bat 'cd'
                 bat 'dir'
-                bat 'printenv'
+                bat 'set'
             }
         }
         stage('Terraform Format') {
