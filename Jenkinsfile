@@ -7,30 +7,30 @@ pipeline {
     stages {
         stage('Terraform Initialization') {
             steps {
-                sh 'terraform init'
-                sh 'pwd'
-                sh 'ls -al'
-                sh 'printenv'
+                bat 'terraform init'
+                bat 'pwd'
+                bat 'ls -al'
+                bat 'printenv'
             }
         }
         stage('Terraform Format') {
             steps {
-                sh 'terraform fmt -check'
+                bat 'terraform fmt -check'
             }
         }
         stage('Terraform Validate') {
             steps {
-                sh 'terraform validate'
+                bat 'terraform validate'
             }
         }
         stage('Terraform Planning') {
             steps {
-                sh 'terraform plan -no-color'
+              bat 'terraform plan -no-color'
             }
         }
         stage('Terraform Apply') {
             steps {
-                sh 'terraform apply -auto-approve'
+                bat 'terraform apply -auto-approve'
             }
         }
 /*        stage('Terraform Destroy') {
